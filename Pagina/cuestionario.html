@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcd.bootstrapcdn.con/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="footer.css">    
+           
+<title>Pagina3</title>
+</head>
+<style>
+    .quiz-container {
+        outline: #33FF34 1px;
+        background-color: #F1BF98;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 2px #3D348B;
+        width: 700px;
+        overflow: hidden;
+    }
+
+    .quiz-header {
+        padding: 4rem;
+    }
+li label {
+        cursor: pointer;
+    }
+
+    button {
+        background-color: #EBA398;
+        color: #6A33FF;
+        border: none;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        font-size: 15px;
+        font-family: verdana, Geneva;
+        padding: 15px;
+    }
+
+    button:hover {
+        background-color: #EA645D;
+    }
+
+    button:focus {
+        outline: none;
+        background-color: #B51F17;
+    }
+      body{
+    background-image: linear-gradient(to right, #FF1F1F, #A39594, #FF8484, #F4AFAB);
+}
+    </style>
+<body>
+
+<div style="margin:24px;">
+    <nav class="navbar navbar-light" style="background-color: #F7EDF0;">
+    <div class="container">
+    <a class="navbar-brand" href="index.html">Inicio</a>
+    <ul class="nav navbar-nav">
+<li>
+<a href="index2.html">Index</a> 
+</li>
+<li>
+<a href="cuestionario.html">Cuestionario</a>
+</li>
+<li>
+<a href="perfil.html">Perfil</a>
+</li>
+<li>
+<a href="movies.html">Api Movies</a>
+</li>
+<li>
+    <a href="calculadora1.html">Calculadora</a>
+</li>
+<li>
+<a href="calculadora2.html">Calculadora Fisica</a>
+</li>
+</li>
+</ul>
+</div>
+</nav>
+<div class="quiz-container" id="quiz">
+  <div class="quiz-header">
+    <div class="image-container">
+      <img src="" alt="Imagen" id="question-image" style="width:250px; height:200px;">
+    </div>
+    <h2 id="question">Question text</h2>
+    <ul>
+      <li>
+        <input type="radio" name="answer" id="a" class="answer">
+        <label for="a" id="a_text">Question</label>
+      </li>
+      <li>
+        <input type="radio" name="answer" id="b" class="answer">
+        <label for="b" id="b_text">Question</label>
+      </li>
+      <li>
+        <input type="radio" name="answer" id="c" class="answer">
+        <label for="c" id="c_text">Question</label>
+      </li>
+      <li>
+        <input type="radio" name="answer" id="d" class="answer">
+        <label for="d" id="d_text">Question</label>
+      </li>
+    </ul>
+  </div>
+  <button id="submit">Siguiente</button>
+</div>
+
+<script>
+const quizData = [
+{
+  question: "1. Eun Woo debutó primero como...",
+  image: "1.jpg",
+  a:"Modelo",
+  b:"Cantante en ASTRO",
+  c:"Actor",
+  d:"Ninguna de las anteriores",
+  correct: "c",
+
+  },
+
+  {
+  question: "2. ¿Dónde estudió Eun Woo en la primaria?",
+  image: "2.jpg",
+  a:"China",
+  b:"Filipinas",
+  c:"Australia",
+  d:"Alemania",
+  correct: "b",
+
+  },
+
+  {
+  question: "3. Asiste a la Universidad Sungkyunkwan, ¿en qué se especializa?",
+  image: "3.jpg",
+  a:"Musica",
+  b:"Artes plasticas",
+  c:"Gastronomia",
+  d:"Artes escenicas",
+  correct: "d",
+
+  },
+
+
+{
+  question: "4. En ASTRO es conocido por varias cosas, entre esas una muy divertida:",
+  image: "4.jpg",
+  a:"Es conocido por despertar muy temprano y despertar al resto",
+  b:"Es conocido por ser el más ruidoso del grupo",
+  c:"Es conocido por hablar dormido",
+  d:"Es conocido por tardar mas en vestirse",
+  correct: "a",
+  },
+
+    {
+  question: "5. Eun Woo confesó las palabras que le decía su madre para mantener la humildad, ¿qué era?",
+  image: "5.jpg",
+  a:"Le repetía que debía ayudar a otros niños",
+  b: "Le decía que no fuera artista y tuviera una carrera menos popular",
+  c: "Le repetía (no eres guapo) para que no fuera vanidoso",
+  d:" Le repetía que dejase de socializar tanto",
+  correct: "c",
+  },
+
+  {
+  question: "6. ¿Cuál es el equipo de fútbol favorito de Eun Woo?",
+  image: "6.jpg",
+  a:"FC Barcelona",
+  b:"Arsenal",
+  c:"Manchester United",
+  d:"Real Madrid",
+  correct: "d",
+  },
+
+    {
+  question: "7. ¿Qué instrumentos puede tocar?",
+  image: "7.jpg",
+  a:"Piano",
+  b:"Bateria y bajo",
+  c:"Trompeta",
+  d:"Piano, flauta, guitarra y violin",
+  correct: "d",
+  },
+
+    {
+  question: "8. ¿En cuál de estas producciones no participó Eun Woo?",
+  image: "8.jpg",
+  a:"Hit the Top",
+  b:"Crash Landing on You",
+  c:"True Beauty",
+  d:"My ID is Gangnam Beauty",
+  correct: "b",
+  },
+
+    {
+  question: "9. ¿Con qué producción hizo su debut actoral?",
+  image: "9.jpg",
+  a:"My Brilliant Life",
+  b:"Hit the Top",
+  c:"To Be Continued",
+  d:"Sweet Revenge",
+  correct: "a",
+  },
+
+    {
+  question: "10. ¿Cuándo debutó como modelo?",
+  image: "10.jpg",
+  a:"Comenzó en 2013",
+  b:"Comenzó en 2014 cuando debutó como actor",
+  c:"Comenzó en 2012",
+  d:"Comenzó en 2017, después de ASTRO",
+  correct: "a",
+  },
+
+
+];
+
+const quiz = document.getElementById('quiz');
+const answerEls = document.querySelectorAll('.answer');
+const questionEl = document.getElementById('question');
+const a_text = document.getElementById('a_text');
+const b_text = document.getElementById('b_text');
+const c_text = document.getElementById('c_text');
+const d_text = document.getElementById('d_text');
+const imageEl = document.getElementById('question-image');
+const submitBtn = document.getElementById('submit');
+
+let currentQuiz = 0;
+let score = 0;
+
+loadQuiz();
+
+function loadQuiz() {
+  deselectAnswers();
+
+  const currentQuizData = quizData[currentQuiz];
+
+  questionEl.innerText = currentQuizData.question;
+  a_text.innerText = currentQuizData.a;
+  b_text.innerText = currentQuizData.b;
+  c_text.innerText = currentQuizData.c;
+  d_text.innerText = currentQuizData.d;
+  imageEl.src = currentQuizData.image;
+}
+
+function deselectAnswers() {
+  answerEls.forEach((answerEl) => (answerEl.checked = false));
+}
+
+function getSelected() {
+  let answer;
+
+  answerEls.forEach((answerEl) => {
+    if (answerEl.checked) {
+      answer = answerEl.id;
+    }
+  });
+
+  return answer;
+}
+
+submitBtn.addEventListener('click', () => {
+  const answer = getSelected();
+
+  if (answer) {
+    if (answer === quizData[currentQuiz].correct) {
+      score++;
+    }
+
+    currentQuiz++;
+
+    if (currentQuiz < quizData.length) {
+      loadQuiz();
+    } else {
+      quiz.innerHTML = `
+        <h2>Respondiste ${score}/${quizData.length} preguntas correctamente</h2>
+        <button onclick="location.reload()">Volver a intentar</button>
+      `;
+    }
+  }
+});
+</script>
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h2>Contactame</h2>
+        <p>Si estas interesado en contactarme, puedes hacerlo a traves de las siguientes redes sociales:</p>
+        <div class="contact-links">
+          <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="http://www.instagram.com/miperfil" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="http://www.snapchat.com/miperfil" target="_blank"><i class="fab fa-snapchat"></i></a>
+          <a href="http://www.linkedin.com/miperfil" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="http://www.youtube.com/miperfil" target="_blank"><i class="fab fa-youtube"></i></a>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  //Con lo siguiente hare que los links de las paginas se abran mediante javascript en un pagina nueva
+const socialnetworks = document.querySelectorAll('.contact-links a');
+socialnetworks.forEach(link =>{
+  link.addEventListener('click', e =>{
+    e.preventDefault();
+    window.open(link.href, '_blank');
+  });
+});
+</script>
+</footer>
+<script >
+       const socialnetworks = document.querySelectorAll('.contact-links a');
+    socialnetworks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            window.open(link.href, '_blank');
+        });
+    });
+    </script>
+</body>
+</html>
